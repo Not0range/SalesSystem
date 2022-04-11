@@ -135,7 +135,7 @@ namespace SalesSystem
             clientsTable.ForEach(t => Console.WriteLine(t));
             Console.WriteLine();
 
-            Console.Write("Введите ID клиента, который необходимо отредактирвоать: ");
+            Console.Write("Введите ID клиента, который необходимо отредактировать: ");
             int id;
             bool success = int.TryParse(Console.ReadLine(), out id);
             Client c;

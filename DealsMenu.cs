@@ -71,20 +71,20 @@ namespace SalesSystem
                 temp[i] = (columns[i], widths[i]);
             WriteTable(dealsTable, temp);
 
-            foreach (var c in Deal.deals)
+            foreach (var d in Deal.deals)
             {
-                temp[0] = (c.id.ToString(), widths[0]);
-                temp[1] = (c.client.ToString(), widths[1]);
-                temp[2] = (c.products[0].ToString(), widths[2]);
-                temp[3] = (c.dealDate.ToString("dd.MM.yy"), widths[3]);
-                temp[4] = (c.Price.ToString(), widths[4]);
+                temp[0] = (d.id.ToString(), widths[0]);
+                temp[1] = (d.client.ToString(), widths[1]);
+                temp[2] = (d.products[0].ToString(), widths[2]);
+                temp[3] = (d.dealDate.ToString("dd.MM.yy"), widths[3]);
+                temp[4] = (d.Price.ToString(), widths[4]);
                 WriteTable(dealsTable, temp);
 
-                for (int i = 1; i < c.products.Count; i++)
+                for (int i = 1; i < d.products.Count; i++)
                 {
                     temp[0] = ("", widths[0]);
                     temp[1] = ("", widths[1]);
-                    temp[2] = (c.products[i].ToString(), widths[2]);
+                    temp[2] = (d.products[i].ToString(), widths[2]);
                     temp[3] = ("", widths[3]);
                     temp[4] = ("", widths[4]);
                     WriteTable(dealsTable, temp);
@@ -243,7 +243,7 @@ namespace SalesSystem
             dealsTable.ForEach(t => Console.WriteLine(t));
             Console.WriteLine();
 
-            Console.Write("Введите ID сделки, которую необходимо отредактирвоать: ");
+            Console.Write("Введите ID сделки, которую необходимо отредактировать: ");
             int id;
             bool success = int.TryParse(Console.ReadLine(), out id);
             Deal d;

@@ -146,7 +146,7 @@ namespace SalesSystem
             productTable.ForEach(t => Console.WriteLine(t));
             Console.WriteLine();
 
-            Console.Write("Введите ID товара, который необходимо отредактирвоать: ");
+            Console.Write("Введите ID товара, который необходимо отредактировать: ");
             int id;
             bool success = int.TryParse(Console.ReadLine(), out id);
             Product p;
